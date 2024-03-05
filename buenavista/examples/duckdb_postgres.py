@@ -36,6 +36,13 @@ if __name__ == "__main__":
         print("Using DuckDB database at %s" % sys.argv[1])
         db = duckdb.connect(sys.argv[1])
 
+    if len(sys.argv) > 3:
+        print(f"Thread limit set to {sys.argv[2]}")
+        db.sql(f"SET threads = {sys.argv[2]}")
+        print(f"Memory limit set to {sys.argv[3]}")
+        db.sql(f"SET memory_limit = {sys.argv[3]}")
+
+
     bv_host = "0.0.0.0"
     bv_port = 5433
 
