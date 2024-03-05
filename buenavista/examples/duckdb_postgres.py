@@ -40,7 +40,7 @@ if __name__ == "__main__":
         print(f"Thread limit set to {sys.argv[2]}")
         db.sql(f"SET threads = {sys.argv[2]}")
         print(f"Memory limit set to {sys.argv[3]}")
-        db.sql(f"SET memory_limit = {sys.argv[3]}")
+        db.sql(f"SET memory_limit = '{sys.argv[3]}'")
 
 
     bv_host = "0.0.0.0"
